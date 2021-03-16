@@ -20,15 +20,15 @@ export class UserListComponent implements OnInit {
   ) { }
 
   deleteItem(user: User){
-    this.userService.delete(user);
+    this.userService.delete(user)
   }
 
   addNewUser(user: User){
-    this.userService.create(user)
-
+    this.userService.create(user);
   }
 
   ngOnInit(): void {
+
   }
 
 }

@@ -34,9 +34,10 @@
           <option [ngValue]="false">inactive</option>
         </select>
             </div>
-            <button type="submit" class="btn btn-primary btn-block mt-5" (click)="update" [routerLink]="['/']" [disabled]="!userForm.form.valid">
+            <button type="submit" class="btn btn-primary btn-block mt-5" (click)="update(user)" [routerLink]="['/']" [disabled]="!userForm.form.valid">
         <i class="fa fa-save"></i>
       </button>
         </form>
+        <!--        {{user | json}} -->
     </div>
 </div>

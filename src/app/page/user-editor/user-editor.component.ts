@@ -35,12 +35,8 @@ export class UserEditorComponent implements OnInit {
     private router: Router,
   ) { }
 
-    update(form: NgForm): void {
-    this.userService.update(form.value);
-    console.log(form.value);
-
-
-
+    update(user: User): void {
+    this.userService.update(user);
     }
 
 
