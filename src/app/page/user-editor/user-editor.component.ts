@@ -34,6 +34,10 @@ export class UserEditorComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
   ) { }
 
+  deleteItem(){
+    
+  }
+
   ngOnInit(): void {
   }
 
