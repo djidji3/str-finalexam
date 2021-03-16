@@ -23,6 +23,11 @@ export class UserListComponent implements OnInit {
     this.userService.delete(user);
   }
 
+  addNewUser(user: User){
+    this.userService.create(user)
+
+  }
+
   ngOnInit(): void {
   }
 

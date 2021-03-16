@@ -1,9 +1,60 @@
+<!-- szuro -->
 <div class="row">
     <div class="col-4 offset-4">
         <input [(ngModel)]="nameFilter" placeholder="keresés név alapján" class="form-control" type="text">
         <p>nameFilter erteke:{{nameFilter}}</p>
     </div>
 </div>
+
+<!-- uj user felvitele -->
+<div class="row mt-5">
+    <div class="col-12 ">
+        <h3 class="col-6 offset-4">Új felhasználó felvitele</h3>
+        <form #newUserForm="ngForm">
+            <table class="table table-striped">
+
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Active</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" readonly></td>
+                        <td> <input type="text" name="name" pattern=".{8,40}">
+                            <div [hidden]="newUserForm.controls.name?.valid" class="error-message">
+                                A név mezo minimun 8, maximum 40 karaktert tartalmazhat </div>
+                        </td>
+
+                        <td> <input type="email" name="email" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
+                            <div [hidden]="newUserForm.controls.email?.valid" class="error-message">
+                                Az emailcím formátuma nem megfelelő </div>
+                        </td>
+                        <td> <input type="text" name="address" pattern=".{8,100}">
+                            <div [hidden]="newUserForm.controls.address?.valid" class="error-message">
+                                A cím mezo minimun 8, maximum 100 karaktert tartalmazhat </div>
+
+                        </td>
+                        <td> <input type="text" name="active"></td>
+                        <td>
+                            <div class="btn-group">
+                                <button class="btn btn-success" [disabled]="newUserForm.form.valid"> <i class="fa fa-user"></i> </button>
+                                <!--    <button class="btn btn-danger"> <i class="fa fa-user" (click)="addNewUser(users$)"></i> </button> -->
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
+
+<!-- lista -->
 <div class="row">
     <div class="col-12 mt-2">
         <h2>User List</h2>
